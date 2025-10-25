@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">ClubCI</string>
+    <string name="app_tagline">Technical Club Management</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="branch">Branch</string>
+    <string name="year">Year</string>
+    <string name="register_here">Register here</string>
+    <string name="login_here">Login here</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_my_events">My Events</string>
+    <string name="nav_qr_code">QR Code</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="events">Events</string>
+    <string name="my_qr_code">My QR Code</string>
+    <string name="profile">Profile</string>
+
+    <!-- Event Types -->
+    <string-array name="event_types">
+        <item>Technical</item>
+        <item>Cultural</item>
+        <item>Sports</item>
+        <item>Workshop</item>
+        <item>Seminar</item>
+        <item>Competition</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Event Statuses -->
+    <string-array name="event_statuses">
+        <item>UPCOMING</item>
+        <item>ONGOING</item>
+        <item>COMPLETED</item>
+    </string-array>
+
+    <!-- Branches -->
+    <string-array name="branches">
+        <item>Computer Engineering</item>
+        <item>Information Technology</item>
+        <item>Electronics</item>
+        <item>Mechanical</item>
+        <item>Civil</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Years -->
+    <string-array name="years">
+        <item>First Year</item>
+        <item>Second Year</item>
+        <item>Third Year</item>
+        <item>Fourth Year</item>
+    </string-array>
+</resources>
