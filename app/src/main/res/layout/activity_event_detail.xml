@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="?attr/colorSurface"
     tools:context=".activities.EventDetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:background="@drawable/gradient_vibrant">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_back" />
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -30,15 +33,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="100dp">
 
             <!-- Event Name -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    tools:text="Tech Fest 2024" />
+
+                <TextView
+                    android:id="@+id/tvType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/chip_gradient"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="TECHNICAL" />
+
+            </LinearLayout>
+
+            <!-- Description -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -47,57 +86,18 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/tvName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="?attr/colorPrimary"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:text="Tech Fest 2024" />
-
-                    <TextView
-                        android:id="@+id/tvType"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/chip_background"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="6dp"
-                        android:textColor="?attr/colorOnSecondaryContainer"
-                        android:textSize="12sp"
-                        tools:text="Technical" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Event Description -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Description"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
 
                     <TextView
                         android:id="@+id/tvDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="14sp"
                         tools:text="Join us for an exciting tech fest with workshops and competitions" />
@@ -110,9 +110,11 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -120,25 +122,25 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Event Details"
-                        android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
                     <!-- Date -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_calendar"
+                            android:tint="?attr/colorPrimary" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:layout_marginStart="12dp"
                             android:text="Date &amp; Time"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
@@ -149,6 +151,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
+                            android:textStyle="bold"
                             tools:text="Dec 25, 2024 10:00 AM" />
 
                     </LinearLayout>
@@ -157,13 +160,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_location"
+                            android:tint="?attr/colorPrimary" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:layout_marginStart="12dp"
                             android:text="Venue"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
@@ -174,6 +185,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
+                            android:textStyle="bold"
                             tools:text="Auditorium" />
 
                     </LinearLayout>
@@ -182,14 +194,22 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_time"
+                            android:tint="?attr/colorPrimary" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Registration Deadline"
+                            android:layout_marginStart="12dp"
+                            android:text="Deadline"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
 
@@ -199,6 +219,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
+                            android:textStyle="bold"
                             tools:text="Dec 20, 2024" />
 
                     </LinearLayout>
@@ -207,14 +228,22 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_rupee"
+                            android:tint="?attr/colorPrimary" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Registration Fee"
+                            android:layout_marginStart="12dp"
+                            android:text="Fee"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
 
@@ -223,7 +252,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="?attr/colorPrimary"
-                            android:textSize="16sp"
+                            android:textSize="18sp"
                             android:textStyle="bold"
                             tools:text="₹500.00" />
 
@@ -233,13 +262,21 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_people"
+                            android:tint="?attr/colorPrimary" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:layout_marginStart="12dp"
                             android:text="Participants"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
@@ -250,29 +287,26 @@
                             android:layout_height="wrap_content"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
+                            android:textStyle="bold"
                             tools:text="50 / 100" />
 
                     </LinearLayout>
 
-                    <!-- Attended (Admin only) -->
-                    <LinearLayout
+                    <!-- Attended -->
+                    <TextView
+                        android:id="@+id/tvAttended"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvAttended"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="?attr/colorSecondary"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:visibility="gone"
-                            tools:text="Attended: 45"
-                            tools:visibility="visible" />
-
-                    </LinearLayout>
+                        android:padding="12dp"
+                        android:background="@drawable/gradient_success"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        tools:text="✓ Attended: 45"
+                        tools:visibility="visible" />
 
                 </LinearLayout>
 
@@ -282,9 +316,11 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -293,18 +329,18 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Requirements"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
 
                     <TextView
                         android:id="@+id/tvRequirements"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="14sp"
                         tools:text="Laptop required. Team size: 2-4 members" />
@@ -317,9 +353,10 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="80dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -328,18 +365,18 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Contact Information"
+                        android:text="Contact"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
 
                     <TextView
                         android:id="@+id/tvContact"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:autoLink="email|phone"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="14sp"
@@ -353,57 +390,81 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Bottom Buttons -->
-    <LinearLayout
+    <!-- Bottom Action Bar with Gradient -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="?attr/colorSurface"
-        android:elevation="8dp"
-        android:orientation="vertical"
-        android:padding="16dp">
+        app:cardElevation="16dp"
+        app:cardCornerRadius="0dp">
 
-        <!-- Register Button (User) -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegister"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Register Now"
-            app:cornerRadius="8dp" />
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
 
-        <!-- View QR Button (Registered User) -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnViewQR"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="View QR Code"
-            android:visibility="gone"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_qr_code" />
+            <!-- Register Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Register Now"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="@null"
+                android:background="@drawable/button_gradient"
+                app:cornerRadius="16dp"
+                app:elevation="8dp" />
 
-        <!-- Admin Buttons -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnMarkAttendance"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="8dp"
-            android:text="Mark Attendance"
-            android:visibility="gone"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_qr_scanner"
-            style="@style/Widget.Material3.Button.OutlinedButton" />
+            <!-- View QR Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewQR"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="View QR Code"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_qr_code"
+                app:iconGravity="textStart"
+                style="@style/Widget.Material3.Button.TonalButton" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnViewRegistrations"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="8dp"
-            android:text="View Registrations"
-            android:visibility="gone"
-            app:cornerRadius="8dp"
-            style="@style/Widget.Material3.Button.OutlinedButton" />
+            <!-- Admin Buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMarkAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:text="Mark Attendance"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_qr_scanner"
+                app:iconGravity="textStart"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
 
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewRegistrations"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:text="View Registrations"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_people"
+                app:iconGravity="textStart"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Progress Bar -->
     <ProgressBar

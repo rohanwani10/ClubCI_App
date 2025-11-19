@@ -81,7 +81,7 @@
         <item name="cardElevation">8dp</item>
         <item name="contentPadding">24dp</item>
         <item name="strokeWidth">1dp</item>
-        <item name="strokeColor">#10A855F7</item>
+        <item name="strokeColor">#1006B6D4</item>
     </style>
 
     <style name="Widget.ClubCI.Card.Outlined" parent="Widget.Material3.CardView.Outlined">
