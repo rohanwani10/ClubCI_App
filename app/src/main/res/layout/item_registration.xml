@@ -4,79 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="2dp">
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <!-- Event Name -->
-        <TextView
-            android:id="@+id/tvEventName"
+        <!-- Colored Top Bar -->
+        <View
+            android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:text="Tech Fest 2024" />
+            android:layout_height="3dp"
+            android:background="?attr/colorPrimary" />
 
-        <!-- Registration Date -->
-        <TextView
-            android:id="@+id/tvRegistrationDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="12sp"
-            tools:text="Registered: Dec 15, 2024" />
-
-        <!-- Status Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <!-- Payment Status Chip -->
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipPaymentStatus"
+            <!-- Event Name -->
+            <TextView
+                android:id="@+id/tvEventName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="Tech Fest 2024" />
+
+            <!-- Registration Date -->
+            <TextView
+                android:id="@+id/tvRegistrationDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="12sp"
+                tools:text="Dec 15, 2024" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:background="?attr/colorOutlineVariant"
+                android:alpha="0.5" />
+
+            <!-- Status Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Payment Status Chip -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPaymentStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:chipCornerRadius="12dp"
+                    app:chipMinHeight="32dp"
+                    tools:text="COMPLETED" />
+
+                <!-- Attendance Status -->
+                <TextView
+                    android:id="@+id/tvAttendanceStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#4CAF50"
+                    android:visibility="gone"
+                    tools:text="✓ Attended"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <!-- Cancel Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                tools:text="COMPLETED" />
-
-            <!-- Attendance Status -->
-            <TextView
-                android:id="@+id/tvAttendanceStatus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:textSize="14sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:text="Cancel"
                 android:textStyle="bold"
+                android:textColor="?attr/colorError"
                 android:visibility="gone"
-                tools:text="✓ Attended"
                 tools:visibility="visible" />
 
         </LinearLayout>
-
-        <!-- Cancel Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCancel"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="8dp"
-            android:text="Cancel Registration"
-            android:textColor="?attr/colorError"
-            android:visibility="gone"
-            tools:visibility="visible" />
 
     </LinearLayout>
 

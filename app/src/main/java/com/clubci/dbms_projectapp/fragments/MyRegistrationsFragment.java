@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -28,7 +28,7 @@ public class MyRegistrationsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private TextView tvEmpty;
+    private LinearLayout tvEmpty;
     private ChipGroup chipGroupFilter;
 
     private RegistrationAdapter adapter;
@@ -187,22 +187,6 @@ public class MyRegistrationsFragment extends Fragment {
         if (filteredRegistrations.isEmpty()) {
             recyclerView.setVisibility(View.GONE);
             tvEmpty.setVisibility(View.VISIBLE);
-
-            String message;
-            switch (currentFilter) {
-                case "PENDING":
-                    message = "No pending registrations";
-                    break;
-                case "COMPLETED":
-                    message = "No completed registrations";
-                    break;
-                case "ATTENDED":
-                    message = "No attended events";
-                    break;
-                default:
-                    message = "No registrations yet\nRegister for events to see them here";
-            }
-            tvEmpty.setText(message);
         } else {
             recyclerView.setVisibility(View.VISIBLE);
             tvEmpty.setVisibility(View.GONE);
