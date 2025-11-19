@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="16dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="?attr/colorSurface"
                 android:layout_marginBottom="20dp">
 
                 <LinearLayout
@@ -96,7 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Welcome Back!"
-                        android:textColor="@color/light_primary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp" />
@@ -105,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sign in to continue"
-                        android:textColor="@color/light_on_surface_variant"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="14sp"
                         android:layout_marginBottom="24dp" />
 
@@ -117,9 +117,9 @@
                         android:layout_marginBottom="16dp"
                         android:hint="@string/username"
                         app:startIconDrawable="@drawable/ic_people"
-                        app:startIconTint="@color/light_primary"
-                        app:boxStrokeColor="@color/light_primary"
-                        app:hintTextColor="@color/light_primary"
+                        app:startIconTint="?attr/colorPrimary"
+                        app:boxStrokeColor="?attr/colorPrimary"
+                        app:hintTextColor="?attr/colorPrimary"
                         app:boxCornerRadiusTopStart="16dp"
                         app:boxCornerRadiusTopEnd="16dp"
                         app:boxCornerRadiusBottomStart="16dp"
@@ -143,11 +143,11 @@
                         android:layout_marginBottom="24dp"
                         android:hint="@string/password"
                         app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/light_primary"
+                        app:passwordToggleTint="?attr/colorPrimary"
                         app:startIconDrawable="@drawable/ic_contact"
-                        app:startIconTint="@color/light_primary"
-                        app:boxStrokeColor="@color/light_primary"
-                        app:hintTextColor="@color/light_primary"
+                        app:startIconTint="?attr/colorPrimary"
+                        app:boxStrokeColor="?attr/colorPrimary"
+                        app:hintTextColor="?attr/colorPrimary"
                         app:boxCornerRadiusTopStart="16dp"
                         app:boxCornerRadiusTopEnd="16dp"
                         app:boxCornerRadiusBottomStart="16dp"
@@ -183,7 +183,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="16dp"
                         android:visibility="gone"
-                        android:indeterminateTint="@color/light_primary" />
+                        android:indeterminateTint="?attr/colorPrimary" />
 
                 </LinearLayout>
 

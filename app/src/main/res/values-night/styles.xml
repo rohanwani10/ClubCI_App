@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme chip overrides -->
+    <style name="Widget.ClubCI.Chip.Success" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">@color/success_dark</item>
+        <item name="android:textColor">@color/dark_background</item>
+        <item name="chipCornerRadius">8dp</item>
+    </style>
+
+    <style name="Widget.ClubCI.Chip.Warning" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">@color/warning_dark</item>
+        <item name="android:textColor">@color/dark_background</item>
+        <item name="chipCornerRadius">8dp</item>
+    </style>
+
+    <style name="Widget.ClubCI.Chip.Error" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">@color/error_dark</item>
+        <item name="android:textColor">@color/dark_background</item>
+        <item name="chipCornerRadius">8dp</item>
+    </style>
+</resources>

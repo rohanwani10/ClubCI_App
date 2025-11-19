@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Override base colors for dark theme to ensure text visibility -->
+    <!-- When layouts use @color/white, it should adapt to dark theme -->
+    <color name="white">#F9FAFB</color>
+    <color name="black">#0F172A</color>
+    
+    <!-- Override deprecated colors for dark theme compatibility -->
+    <color name="text_white">#F9FAFB</color>
+    <color name="text_primary">#F9FAFB</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="text_hint">#6B7280</color>
+    
+    <!-- Override background and surface colors -->
+    <color name="background">#0F172A</color>
+    <color name="surface">#1E293B</color>
+    <color name="surface_light">#334155</color>
+    
+    <!-- Override divider and border for dark theme -->
+    <color name="divider">#475569</color>
+    <color name="border">#475569</color>
+    
+    <!-- Override overlay for dark theme -->
+    <color name="overlay">#CC000000</color>
+</resources>

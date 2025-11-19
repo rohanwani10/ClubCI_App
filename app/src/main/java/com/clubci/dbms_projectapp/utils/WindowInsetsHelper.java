@@ -1,6 +1,8 @@
 package com.clubci.dbms_projectapp.utils;
 
 import android.app.Activity;
+import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
@@ -30,6 +32,16 @@ public class WindowInsetsHelper {
         // Enable edge-to-edge display
         WindowCompat.setDecorFitsSystemWindows(window, false);
 
+        // Make status bar and navigation bar transparent
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
+
+        // Detect if we're in dark mode
+        int nightMode = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        boolean isDarkMode = nightMode == Configuration.UI_MODE_NIGHT_YES;
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             // Android 11+ (API 30+)
             // Note: getInsetsController() might return null if called too early
@@ -37,23 +49,49 @@ public class WindowInsetsHelper {
             try {
                 WindowInsetsController controller = window.getInsetsController();
                 if (controller != null) {
-                    // Make system bars semi-transparent
-                    controller.setSystemBarsAppearance(
-                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
+                    // Set light or dark system bars based on theme
+                    if (isDarkMode) {
+                        // Dark mode: use light icons/text on system bars (default)
+                        controller.setSystemBarsAppearance(
+                                0,
+                                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS |
+                                        WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS);
+                    } else {
+                        // Light mode: use dark icons/text on system bars
+                        controller.setSystemBarsAppearance(
+                                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS |
+                                        WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+                                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS |
+                                        WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS);
+                    }
                 }
             } catch (Exception e) {
                 // Ignore if controller is not available yet
                 // The appearance will be set by fitsSystemWindows in the layout
             }
-        } else {
-            // Pre-Android 11
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // Android 6-10
             try {
                 View decorView = window.getDecorView();
                 if (decorView != null) {
                     int flags = decorView.getSystemUiVisibility();
                     flags |= View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
                     flags |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+
+                    if (!isDarkMode) {
+                        // Light mode: use dark icons
+                        flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+                        }
+                    } else {
+                        // Dark mode: remove light flags to use light icons
+                        flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+                        }
+                    }
+
                     decorView.setSystemUiVisibility(flags);
                 }
             } catch (Exception e) {
