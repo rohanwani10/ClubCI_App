@@ -16,6 +16,7 @@ import com.clubci.dbms_projectapp.fragments.QrCodeFragment;
 import com.clubci.dbms_projectapp.fragments.ProfileFragment;
 import com.clubci.dbms_projectapp.fragments.AnalyticsFragment;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_main);
 
         prefsManager = SharedPreferencesManager.getInstance(this);

@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.clubci.dbms_projectapp.R;
 import com.clubci.dbms_projectapp.utils.ApiClient;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,6 +47,10 @@ public class PaymentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_payment);
 
         prefs = SharedPreferencesManager.getInstance(this);
@@ -77,7 +82,7 @@ public class PaymentActivity extends AppCompatActivity {
                 MERCHANT_NAME,
                 amount,
                 // Use a unique transaction reference id
-                "EVT-" + eventId+ "-" + System.currentTimeMillis(),
+                "EVT-" + eventId + "-" + System.currentTimeMillis(),
                 // Note shown to payer
                 "Payment for event " + eventId + " by " + username);
 

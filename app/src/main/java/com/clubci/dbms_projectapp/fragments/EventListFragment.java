@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,7 +32,7 @@ public class EventListFragment extends Fragment {
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefresh;
     private FloatingActionButton fab;
-    private TextView tvEmpty;
+    private LinearLayout tvEmpty;
     private EventAdapter adapter;
     private ApiClient apiClient;
     private SharedPreferencesManager prefsManager;
@@ -155,7 +155,7 @@ public class EventListFragment extends Fragment {
                 swipeRefresh.setRefreshing(false);
                 showError(error);
                 tvEmpty.setVisibility(View.VISIBLE);
-                tvEmpty.setText("Failed to load events\n" + error);
+                recyclerView.setVisibility(View.GONE);
             }
         });
     }

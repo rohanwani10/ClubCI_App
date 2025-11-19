@@ -1,7 +1,58 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.DBMS_ProjectAPP" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <!-- Dark Theme - Professional Dark Purple/Indigo -->
+    <style name="Base.Theme.DBMS_ProjectAPP" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/dark_primary</item>
+        <item name="colorPrimaryVariant">@color/dark_primary_variant</item>
+        <item name="colorOnPrimary">@color/dark_on_primary</item>
+        
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/dark_secondary</item>
+        <item name="colorSecondaryVariant">@color/dark_secondary_variant</item>
+        <item name="colorOnSecondary">@color/dark_on_secondary</item>
+        
+        <!-- Background Colors -->
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorSurfaceVariant">@color/dark_surface_variant</item>
+        <item name="colorOnBackground">@color/dark_on_background</item>
+        <item name="colorOnSurface">@color/dark_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/dark_on_surface_variant</item>
+        
+        <!-- Error Colors -->
+        <item name="colorError">@color/error_dark</item>
+        <item name="colorOnError">@color/black</item>
+        
+        <!-- Status Bar & Navigation Bar -->
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:navigationBarColor">@color/dark_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+        
+        <!-- Text Appearance -->
+        <item name="android:textColorPrimary">@color/dark_on_surface</item>
+        <item name="android:textColorSecondary">@color/dark_on_surface_variant</item>
+        <item name="android:textColorHint">@color/dark_on_surface_variant</item>
+        
+        <!-- Divider -->
+        <item name="android:listDivider">@color/divider_dark</item>
+        
+        <!-- Window Background -->
+        <item name="android:windowBackground">@color/dark_background</item>
+        
+        <!-- Elevation Overlay -->
+        <item name="elevationOverlayEnabled">true</item>
+        <item name="elevationOverlayColor">@color/white</item>
+        
+        <!-- Component Styles -->
+        <item name="materialButtonStyle">@style/Widget.ClubCI.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.ClubCI.Card</item>
+        <item name="textInputStyle">@style/Widget.ClubCI.TextInputLayout</item>
+        <item name="toolbarStyle">@style/Widget.ClubCI.Toolbar</item>
+        
+        <!-- Shape Appearances -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.ClubCI.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.ClubCI.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.ClubCI.LargeComponent</item>
     </style>
 </resources>

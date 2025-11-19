@@ -1,48 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     
-    <!-- Primary Colors -->
-    <color name="primary">#2196F3</color>
-    <color name="primary_dark">#1976D2</color>
-    <color name="primary_light">#BBDEFB</color>
-    <color name="accent">#FF5722</color>
+    <!-- Modern Vibrant Color Palette -->
+    <!-- Primary Colors - Vibrant Purple/Blue Gradient -->
+    <color name="light_primary">#7C3AED</color>
+    <color name="light_primary_variant">#6D28D9</color>
+    <color name="light_secondary">#EC4899</color>
+    <color name="light_secondary_variant">#DB2777</color>
+    <color name="light_background">#F9FAFB</color>
+    <color name="light_surface">#FFFFFF</color>
+    <color name="light_surface_variant">#F3F4F6</color>
+    <color name="light_on_primary">#FFFFFF</color>
+    <color name="light_on_secondary">#FFFFFF</color>
+    <color name="light_on_background">#111827</color>
+    <color name="light_on_surface">#111827</color>
+    <color name="light_on_surface_variant">#6B7280</color>
     
-    <!-- Background Colors -->
-    <color name="background">#FAFAFA</color>
-    <color name="surface">#FFFFFF</color>
-    <color name="surface_light">#F5F5F5</color>
+    <!-- Dark Theme Colors - Modern Dark with Vibrant Accents -->
+    <color name="dark_primary">#A78BFA</color>
+    <color name="dark_primary_variant">#8B5CF6</color>
+    <color name="dark_secondary">#F472B6</color>
+    <color name="dark_secondary_variant">#EC4899</color>
+    <color name="dark_background">#0F172A</color>
+    <color name="dark_surface">#1E293B</color>
+    <color name="dark_surface_variant">#334155</color>
+    <color name="dark_on_primary">#1E1B4B</color>
+    <color name="dark_on_secondary">#831843</color>
+    <color name="dark_on_background">#F9FAFB</color>
+    <color name="dark_on_surface">#F9FAFB</color>
+    <color name="dark_on_surface_variant">#9CA3AF</color>
     
-    <!-- Text Colors -->
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="text_hint">#BDBDBD</color>
-    <color name="text_white">#FFFFFF</color>
-    
-    <!-- Status Colors -->
-    <color name="success">#4CAF50</color>
-    <color name="error">#F44336</color>
-    <color name="warning">#FF9800</color>
-    <color name="info">#2196F3</color>
-    
-    <!-- Chip Colors -->
-    <color name="chip_pending">#FFF3E0</color>
-    <color name="chip_pending_text">#E65100</color>
-    <color name="chip_completed">#E8F5E9</color>
-    <color name="chip_completed_text">#1B5E20</color>
-    <color name="chip_attended">#E3F2FD</color>
-    <color name="chip_attended_text">#0D47A1</color>
-    
-    <!-- Divider & Border -->
-    <color name="divider">#E0E0E0</color>
-    <color name="border">#BDBDBD</color>
+    <!-- Status Colors (Works in both themes) - More Vibrant -->
+    <color name="success">#10B981</color>
+    <color name="success_dark">#34D399</color>
+    <color name="error">#EF4444</color>
+    <color name="error_dark">#F87171</color>
+    <color name="warning">#F59E0B</color>
+    <color name="warning_dark">#FBBF24</color>
+    <color name="info">#3B82F6</color>
+    <color name="info_dark">#60A5FA</color>
     
     <!-- Gradient Colors -->
-    <color name="gradient_start">#2196F3</color>
-    <color name="gradient_end">#21CBF3</color>
+    <color name="gradient_start">#7C3AED</color>
+    <color name="gradient_middle">#A855F7</color>
+    <color name="gradient_end">#EC4899</color>
+    <color name="gradient_overlay">#40000000</color>
     
-    <!-- Transparent -->
+    <!-- Chip/Badge Colors - Light Theme -->
+    <color name="chip_pending_light">#FEF3C7</color>
+    <color name="chip_pending_text_light">#92400E</color>
+    <color name="chip_completed_light">#D1FAE5</color>
+    <color name="chip_completed_text_light">#065F46</color>
+    <color name="chip_attended_light">#DBEAFE</color>
+    <color name="chip_attended_text_light">#1E3A8A</color>
+    
+    <!-- Chip/Badge Colors - Dark Theme -->
+    <color name="chip_pending_dark">#451A03</color>
+    <color name="chip_pending_text_dark">#FCD34D</color>
+    <color name="chip_completed_dark">#064E3B</color>
+    <color name="chip_completed_text_dark">#6EE7B7</color>
+    <color name="chip_attended_dark">#1E3A8A</color>
+    <color name="chip_attended_text_dark">#93C5FD</color>
+    
+    <!-- Accent Colors - Vibrant Set -->
+    <color name="accent_purple">#A855F7</color>
+    <color name="accent_pink">#EC4899</color>
+    <color name="accent_orange">#F97316</color>
+    <color name="accent_cyan">#06B6D4</color>
+    <color name="accent_teal">#14B8A6</color>
+    <color name="accent_yellow">#FBBF24</color>
+    <color name="accent_blue">#3B82F6</color>
+    <color name="accent_green">#10B981</color>
+    
+    <!-- Divider & Border -->
+    <color name="divider_light">#E2E8F0</color>
+    <color name="divider_dark">#475569</color>
+    <color name="border_light">#CBD5E1</color>
+    <color name="border_dark">#475569</color>
+    
+    <!-- Overlay -->
+    <color name="overlay_light">#80000000</color>
+    <color name="overlay_dark">#CC000000</color>
     <color name="transparent">#00000000</color>
+    
+    <!-- Ripple Effects -->
+    <color name="ripple_light">#1A000000</color>
+    <color name="ripple_dark">#1AFFFFFF</color>
+    
+    <!-- Deprecated - kept for backwards compatibility -->
+    <color name="primary">#6366F1</color>
+    <color name="primary_dark">#4F46E5</color>
+    <color name="primary_light">#A5B4FC</color>
+    <color name="accent">#10B981</color>
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_light">#F1F5F9</color>
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="chip_pending">#FEF3C7</color>
+    <color name="chip_pending_text">#92400E</color>
+    <color name="chip_completed">#D1FAE5</color>
+    <color name="chip_completed_text">#065F46</color>
+    <color name="chip_attended">#DBEAFE</color>
+    <color name="chip_attended_text">#1E3A8A</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="border">#CBD5E1</color>
     <color name="overlay">#80000000</color>
 </resources>

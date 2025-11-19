@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 public class ApiClient {
 
     // TODO: Replace with your actual API base URL
-    private static final String BASE_URL = "http://10.228.99.56:3000";
+    private static final String BASE_URL = "http://10.222.23.56:3000";
 
     private static final ExecutorService executorService = Executors.newFixedThreadPool(4);
     private static final Handler mainHandler = new Handler(Looper.getMainLooper());

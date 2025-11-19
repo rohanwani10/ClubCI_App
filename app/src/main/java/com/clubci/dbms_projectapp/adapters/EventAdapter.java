@@ -94,10 +94,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             double fee = event.getFee();
             if (fee == 0) {
                 tvFee.setText("FREE");
-                tvFee.setTextColor(itemView.getContext().getColor(R.color.success));
+                tvFee.setTextColor(itemView.getContext().getColor(R.color.success_dark));
             } else {
                 tvFee.setText("₹" + String.format("%.0f", fee));
-                tvFee.setTextColor(itemView.getContext().getColor(R.color.accent));
+                tvFee.setTextColor(itemView.getContext().getColor(R.color.dark_secondary));
             }
 
             // Progress
@@ -123,13 +123,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
                 // Set status color
                 int statusColor;
                 if ("UPCOMING".equalsIgnoreCase(status)) {
-                    statusColor = itemView.getContext().getColor(R.color.info);
+                    statusColor = itemView.getContext().getColor(R.color.info_dark);
                 } else if ("ONGOING".equalsIgnoreCase(status)) {
-                    statusColor = itemView.getContext().getColor(R.color.success);
+                    statusColor = itemView.getContext().getColor(R.color.success_dark);
                 } else if ("COMPLETED".equalsIgnoreCase(status)) {
-                    statusColor = itemView.getContext().getColor(R.color.text_secondary);
+                    statusColor = itemView.getContext().getColor(R.color.dark_on_surface_variant);
                 } else {
-                    statusColor = itemView.getContext().getColor(R.color.text_secondary);
+                    statusColor = itemView.getContext().getColor(R.color.dark_on_surface_variant);
                 }
                 tvStatus.setTextColor(statusColor);
             } else {

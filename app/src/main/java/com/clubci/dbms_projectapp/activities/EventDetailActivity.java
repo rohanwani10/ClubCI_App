@@ -17,6 +17,7 @@ import com.clubci.dbms_projectapp.models.Event;
 import com.clubci.dbms_projectapp.utils.ApiClient;
 import com.clubci.dbms_projectapp.utils.DateUtils;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 import com.google.android.material.snackbar.Snackbar;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +38,10 @@ public class EventDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_event_detail);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

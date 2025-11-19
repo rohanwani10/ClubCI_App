@@ -50,10 +50,13 @@ public class RegistrationAdapter extends RecyclerView.Adapter<RegistrationAdapte
         holder.chipPaymentStatus.setText(registration.getPaymentStatus());
         if ("COMPLETED".equalsIgnoreCase(registration.getPaymentStatus())) {
             holder.chipPaymentStatus.setChipBackgroundColorResource(R.color.success);
+            holder.chipPaymentStatus.setTextColor(holder.itemView.getContext().getColor(R.color.white));
         } else if ("PENDING".equalsIgnoreCase(registration.getPaymentStatus())) {
             holder.chipPaymentStatus.setChipBackgroundColorResource(R.color.warning);
+            holder.chipPaymentStatus.setTextColor(holder.itemView.getContext().getColor(R.color.white));
         } else {
             holder.chipPaymentStatus.setChipBackgroundColorResource(R.color.error);
+            holder.chipPaymentStatus.setTextColor(holder.itemView.getContext().getColor(R.color.white));
         }
 
         // Attendance Status
@@ -61,7 +64,7 @@ public class RegistrationAdapter extends RecyclerView.Adapter<RegistrationAdapte
             holder.tvAttendanceStatus.setVisibility(View.VISIBLE);
             holder.tvAttendanceStatus.setText("✓ Attended");
             holder.tvAttendanceStatus.setTextColor(
-                    holder.itemView.getContext().getColor(R.color.success));
+                    holder.itemView.getContext().getColor(R.color.success_dark));
         } else {
             holder.tvAttendanceStatus.setVisibility(View.GONE);
         }

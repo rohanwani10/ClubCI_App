@@ -18,6 +18,7 @@ import com.clubci.dbms_projectapp.utils.ApiClient;
 import com.clubci.dbms_projectapp.utils.DateUtils;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
 import com.clubci.dbms_projectapp.utils.ValidationUtils;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
@@ -44,6 +45,10 @@ public class CreateEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_create_event);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

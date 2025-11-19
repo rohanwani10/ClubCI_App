@@ -1,9 +1,75 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.DBMS_ProjectAPP" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Light Theme -->
+    <style name="Base.Theme.DBMS_ProjectAPP" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimaryVariant">@color/light_primary_variant</item>
+        <item name="colorOnPrimary">@color/light_on_primary</item>
+        
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/light_secondary</item>
+        <item name="colorSecondaryVariant">@color/light_secondary_variant</item>
+        <item name="colorOnSecondary">@color/light_on_secondary</item>
+        
+        <!-- Background Colors -->
+        <item name="android:colorBackground">@color/light_background</item>
+        <item name="colorSurface">@color/light_surface</item>
+        <item name="colorSurfaceVariant">@color/light_surface_variant</item>
+        <item name="colorOnBackground">@color/light_on_background</item>
+        <item name="colorOnSurface">@color/light_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/light_on_surface_variant</item>
+        
+        <!-- Error Colors -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        
+        <!-- Status Bar & Navigation Bar -->
+        <item name="android:statusBarColor">@color/light_surface</item>
+        <item name="android:navigationBarColor">@color/light_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        
+        <!-- Text Appearance -->
+        <item name="android:textColorPrimary">@color/light_on_surface</item>
+        <item name="android:textColorSecondary">@color/light_on_surface_variant</item>
+        <item name="android:textColorHint">@color/light_on_surface_variant</item>
+        
+        <!-- Divider -->
+        <item name="android:listDivider">@color/divider_light</item>
+        
+        <!-- Window Background -->
+        <item name="android:windowBackground">@color/light_background</item>
+        
+        <!-- Elevation Overlay -->
+        <item name="elevationOverlayEnabled">false</item>
+        
+        <!-- Component Styles -->
+        <item name="materialButtonStyle">@style/Widget.ClubCI.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.ClubCI.Card</item>
+        <item name="textInputStyle">@style/Widget.ClubCI.TextInputLayout</item>
+        <item name="toolbarStyle">@style/Widget.ClubCI.Toolbar</item>
+        
+        <!-- Shape Appearances -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.ClubCI.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.ClubCI.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.ClubCI.LargeComponent</item>
     </style>
 
     <style name="Theme.DBMS_ProjectAPP" parent="Base.Theme.DBMS_ProjectAPP" />
+    
+    <!-- Shape Appearances -->
+    <style name="ShapeAppearance.ClubCI.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.ClubCI.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.ClubCI.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
 </resources>

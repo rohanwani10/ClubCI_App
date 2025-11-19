@@ -45,9 +45,11 @@ public class AdminRegistrationAdapter extends RecyclerView.Adapter<AdminRegistra
         if (registration.isAttended()) {
             holder.chipAttendance.setText("Attended");
             holder.chipAttendance.setChipBackgroundColorResource(R.color.success);
+            holder.chipAttendance.setTextColor(holder.itemView.getContext().getColor(R.color.white));
         } else {
             holder.chipAttendance.setText("Not Attended");
             holder.chipAttendance.setChipBackgroundColorResource(R.color.warning);
+            holder.chipAttendance.setTextColor(holder.itemView.getContext().getColor(R.color.white));
         }
     }
 

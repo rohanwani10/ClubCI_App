@@ -24,6 +24,7 @@ import com.clubci.dbms_projectapp.R;
 import com.clubci.dbms_projectapp.utils.ApiClient;
 import com.clubci.dbms_projectapp.utils.QRCodeGenerator;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -63,6 +64,10 @@ public class QrScannerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_qr_scanner);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

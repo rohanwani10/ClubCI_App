@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.clubci.dbms_projectapp.R;
 import com.clubci.dbms_projectapp.utils.ApiClient;
 import com.clubci.dbms_projectapp.utils.ValidationUtils;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -22,9 +23,9 @@ import org.json.JSONObject;
 public class RegisterActivity extends AppCompatActivity {
 
     private TextInputLayout tilUsername, tilEmail, tilPassword, tilConfirmPassword;
-    private TextInputLayout tilFullName, tilPhone, tilAddress;
+    private TextInputLayout tilFullName, tilPhone;
     private TextInputEditText etUsername, etEmail, etPassword, etConfirmPassword;
-    private TextInputEditText etFullName, etPhone, etAddress;
+    private TextInputEditText etFullName, etPhone;
     private Spinner spinnerBranch, spinnerYear;
     private Button btnRegister;
     private TextView tvLogin;
@@ -34,6 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_register);
 
         if (getSupportActionBar() != null) {
@@ -54,7 +59,6 @@ public class RegisterActivity extends AppCompatActivity {
         tilConfirmPassword = findViewById(R.id.tilConfirmPassword);
         tilFullName = findViewById(R.id.tilFullName);
         tilPhone = findViewById(R.id.tilPhone);
-        tilAddress = findViewById(R.id.tilAddress);
 
         etUsername = findViewById(R.id.etUsername);
         etEmail = findViewById(R.id.etEmail);
@@ -62,7 +66,6 @@ public class RegisterActivity extends AppCompatActivity {
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         etFullName = findViewById(R.id.etFullName);
         etPhone = findViewById(R.id.etPhone);
-        etAddress = findViewById(R.id.etAddress);
 
         spinnerBranch = findViewById(R.id.spinnerBranch);
         spinnerYear = findViewById(R.id.spinnerYear);
@@ -105,7 +108,6 @@ public class RegisterActivity extends AppCompatActivity {
         String confirmPassword = etConfirmPassword.getText().toString().trim();
         String fullName = etFullName.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
-        String address = etAddress.getText().toString().trim();
         String branch = getBranchCode(spinnerBranch.getSelectedItem().toString());
         String year = String.valueOf(spinnerYear.getSelectedItemPosition() + 1);
 
@@ -146,11 +148,6 @@ public class RegisterActivity extends AppCompatActivity {
             isValid = false;
         }
 
-        if (ValidationUtils.isEmpty(address)) {
-            tilAddress.setError("Address is required");
-            isValid = false;
-        }
-
         if (!isValid) {
             return;
         }
@@ -166,7 +163,6 @@ public class RegisterActivity extends AppCompatActivity {
             requestBody.put("fullName", fullName);
             requestBody.put("branch", branch);
             requestBody.put("phone", phone);
-            requestBody.put("address", address);
             requestBody.put("year", year);
 
             JSONArray roles = new JSONArray();
@@ -231,7 +227,6 @@ public class RegisterActivity extends AppCompatActivity {
         tilConfirmPassword.setError(null);
         tilFullName.setError(null);
         tilPhone.setError(null);
-        tilAddress.setError(null);
     }
 
     private void showProgress(boolean show) {

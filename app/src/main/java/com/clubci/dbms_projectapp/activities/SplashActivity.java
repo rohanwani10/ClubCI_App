@@ -7,6 +7,7 @@ import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
 import com.clubci.dbms_projectapp.R;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -15,6 +16,10 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_splash);
 
         // Hide action bar

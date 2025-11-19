@@ -15,6 +15,7 @@ import com.clubci.dbms_projectapp.adapters.AdminRegistrationAdapter;
 import com.clubci.dbms_projectapp.models.Registration;
 import com.clubci.dbms_projectapp.utils.ApiClient;
 import com.clubci.dbms_projectapp.utils.SharedPreferencesManager;
+import com.clubci.dbms_projectapp.utils.WindowInsetsHelper;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -44,6 +45,10 @@ public class RegistrationListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable edge-to-edge display for safe area handling
+        WindowInsetsHelper.enableEdgeToEdge(this);
+
         setContentView(R.layout.activity_registration_list);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
